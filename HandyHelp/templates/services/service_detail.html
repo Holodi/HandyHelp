@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Detail</title>
+    <style>
+        body {
+            background-color: #202124;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+        h2 {
+            color: #ff5722;
+        }
+        .service img {
+            max-width: 400px;
+            max-height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Service Detail</h2>
+    <div class="service">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <p>Price: ${{ service.price }}</p>
+        <p>Location: {{ service.location }}</p>
+        <img src="{{ service.image.url }}" alt="{{ service.title }}">
+        <p><a href="{% url 'edit_service' service.id %}">Edit</a> | <a href="{% url 'delete_service' service.id %}">Delete</a></p>
+    </div>
+</body>
+</html>
